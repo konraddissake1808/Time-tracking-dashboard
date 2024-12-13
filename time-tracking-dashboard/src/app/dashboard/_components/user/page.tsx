@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import UserImage from '../../../../../public/images/image-jeremy.png'
 
+//add a function for each button to determine the time frame to display and export it to the activity card component using use state
+
 function User() {
   return (
     <div className='w-[90%]'>
