@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import User from './_components/user/page'
 import Activity from './_components/activityCard/page'
 import briefCase from './../../../public/images/icon-work.svg'
@@ -7,21 +7,27 @@ import book from './../../../public/images/icon-study.svg'
 import exercise from './../../../public/images/icon-exercise.svg'
 import discussionBubble from './../../../public/images/icon-social.svg'
 import heart from './../../../public/images/icon-self-care.svg'
-import { promises as fs } from 'fs'
 
 
-async function Dashboard() {
+function Dashboard({data}) {
 
-  const file = await fs.readFile(process.cwd() + '/data/data.json', 'utf8');
-  const data = JSON.parse(file);
+  //console.log(data)
+  //const dailyTimeframe = () => {
+    
+  //}
 
-  console.log(data[0]);
+
+
+  const work = data[0];
+  
+
+  //const currentDailytime = data[0].timeframes.daily.current;
 
   return (
     <div className='flex justify-center pt-16 flex-col items-center'>
-      <User></User>
+      <User data={data}></User>
       <div className='w-full flex justify-center'>
-        <Activity title={data[0].title} imageSrc={briefCase} color='hsl(15, 100%, 70%)'></Activity>
+        <Activity time={work.timeframes.daily.current} title={data[0].title} imageSrc={briefCase} color='hsl(15, 100%, 70%)'></Activity>
       </div>
       <div className='w-full flex justify-center'>
         <Activity title={data[1].title} imageSrc={controller} color='hsl(195, 74%, 62%)'></Activity>

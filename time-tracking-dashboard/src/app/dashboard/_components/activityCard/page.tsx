@@ -6,9 +6,11 @@ interface ActivityProps{
   color:string;
   imageSrc:StaticImageData;
   title: string;
+  time: number;
+  previousTime: number;
 }
 
-export const Activity: React.FC<ActivityProps> = ({color,imageSrc, title}) => {
+export const Activity: React.FC<ActivityProps> = ({color,imageSrc, title, time, previousTime}) => {
   return (
     <div className='w-[90%] mb-6'>
         <div className='w-full h-32 relative'>
@@ -19,6 +21,8 @@ export const Activity: React.FC<ActivityProps> = ({color,imageSrc, title}) => {
             </div>
             <div className='bg-darkBlue w-full h-3/4 z-10 absolute bottom-0 rounded-lg text-white'>
               <p>{title}</p>
+              <p>{time}</p>
+              <p>{previousTime}</p>
             </div>
         </div>
     </div>
