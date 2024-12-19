@@ -2,7 +2,7 @@ import React from 'react'
 import Image, { StaticImageData } from 'next/image'
 
 
-interface ActivityProps{
+type ActivityProps = {
   color:string;
   imageSrc:StaticImageData;
   title: string;

@@ -2,14 +2,15 @@
 import React from 'react'
 import Image from 'next/image'
 import UserImage from '../../../../../public/images/image-jeremy.png'
-import { useState } from 'react';
 
 //add a function for each button to determine the time frame to display and export it to the activity card component using use state
+type userProp = {
+  dailyData: number;
+  sendToDashboard: any;
+};
 
-const User = ({data}) => {
 
-
-  console.log(data)
+const User: React.FC<userProp> = ({data, sendToDashboard}) => {
 
   function dailyTimeframe() {
     const dailyButton = document.getElementById('daily')
@@ -18,7 +19,10 @@ const User = ({data}) => {
     weeklyButton?.classList.remove('active');
     const monthlyButton = document.getElementById('monthly');
     monthlyButton?.classList.remove('active');
+    const dailyData = data[0].timeframes.daily.current;
+    sendToDashboard(dailyData);
   }
+ 
 
   function weeklyTimeframe() {
     const weeklyButton = document.getElementById('weekly');
@@ -38,7 +42,7 @@ const User = ({data}) => {
     weeklyButton?.classList.remove('active');
   }
 
-    const [active,setActive] = useState(dailyTimeframe)
+   // const [active,setActive] = useState(dailyTimeframe)
 
   return (
     <div className='w-[90%]'>
