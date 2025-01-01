@@ -22,19 +22,33 @@ function Dashboard({data}) {
       data[5].timeframes.daily.current
     ]
   );
+
+  const [previousTime, setPreviousTime] = useState(
+    [
+      data[0].timeframes.daily.previous, 
+      data[1].timeframes.daily.previous, 
+      data[2].timeframes.daily.previous, 
+      data[3].timeframes.daily.previous, 
+      data[4].timeframes.daily.previous, 
+      data[5].timeframes.daily.previous
+    ]
+  )
   //console.log(data)
   const dailyTimeframe = (dailyButtonData: array) => {
-    setTime(dailyButtonData);
-    console.log(dailyButtonData);
+    setTime(dailyButtonData[0]);
+    setPreviousTime(dailyButtonData[1])
+    console.log(dailyButtonData[1]);
   }
 
   const weeklyTimeframe = (weeklyButtonData: array) => {
-    setTime(weeklyButtonData);
+    setTime(weeklyButtonData[0]);
+    setPreviousTime(weeklyButtonData[1])
     console.log(weeklyButtonData);
   };
 
   const monthlyTimeframe = (monthlyButtonData: array) => {
-    setTime(monthlyButtonData);
+    setTime(monthlyButtonData[0]);
+    setPreviousTime(monthlyButtonData[1])
     console.log(monthlyButtonData);
   };
 
@@ -48,22 +62,22 @@ function Dashboard({data}) {
     <div className='flex justify-center pt-16 flex-col items-center'>
       <User monthlyDataFromDashboard={monthlyTimeframe} weeklyDataForDashboard={weeklyTimeframe} dailyDataForDashboard={dailyTimeframe} data={data}></User>
       <div className='w-full flex justify-center'>
-        <Activity time={time[0]} title={data[0].title} imageSrc={briefCase} color='hsl(15, 100%, 70%)'></Activity>
+        <Activity previousTime={previousTime[0]} time={time[0]} title={data[0].title} imageSrc={briefCase} color='hsl(15, 100%, 70%)'></Activity>
       </div>
       <div className='w-full flex justify-center'>
-        <Activity time={time[1]} title={data[1].title} imageSrc={controller} color='hsl(195, 74%, 62%)'></Activity>
+        <Activity previousTime={previousTime[1]} time={time[1]} title={data[1].title} imageSrc={controller} color='hsl(195, 74%, 62%)'></Activity>
       </div>
       <div className='w-full flex justify-center'>
-        <Activity time={time[2]} title={data[2].title} imageSrc={book} color='hsl(348, 100%, 68%)'></Activity>
+        <Activity previousTime={previousTime[2]} time={time[2]} title={data[2].title} imageSrc={book} color='hsl(348, 100%, 68%)'></Activity>
       </div>
       <div className='w-full flex justify-center'>
-        <Activity time={time[3]} title={data[3].title} imageSrc={exercise} color='hsl(145, 58%, 55%)'></Activity>
+        <Activity previousTime={previousTime[3]} time={time[3]} title={data[3].title} imageSrc={exercise} color='hsl(145, 58%, 55%)'></Activity>
       </div>
       <div className='w-full flex justify-center'>
-        <Activity time={time[4]} title={data[4].title} imageSrc={discussionBubble} color='hsl(264, 64%, 52%)'></Activity>
+        <Activity previousTime={previousTime[4]} time={time[4]} title={data[4].title} imageSrc={discussionBubble} color='hsl(264, 64%, 52%)'></Activity>
       </div>
       <div className='w-full flex justify-center'>
-        <Activity time={time[5]} title={data[5].title} imageSrc={heart} color='hsl(43, 84%, 65%)'></Activity>
+        <Activity previousTime={previousTime[5]} time={time[5]} title={data[5].title} imageSrc={heart} color='hsl(43, 84%, 65%)'></Activity>
       </div>
     </div>
   )

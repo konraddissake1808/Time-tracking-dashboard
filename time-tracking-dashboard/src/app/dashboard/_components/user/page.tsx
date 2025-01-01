@@ -3,7 +3,6 @@ import React from 'react'
 import Image from 'next/image'
 import UserImage from '../../../../../public/images/image-jeremy.png'
 
-//add a function for each button to determine the time frame to display and export it to the activity card component using use state
 type userProp = {
   workDailyData: number;
   dailyDataForDashboard: any;
@@ -22,17 +21,26 @@ const User: React.FC<userProp> = ({data, dailyDataForDashboard, weeklyDataForDas
     const monthlyButton = document.getElementById('monthly');
     monthlyButton?.classList.remove('active');
     const dailyData = [
-      data[0].timeframes.daily.current,
-      data[1].timeframes.daily.current,
-      data[2].timeframes.daily.current,
-      data[3].timeframes.daily.current,
-      data[4].timeframes.daily.current,
-      data[5].timeframes.daily.current,
+      [
+        data[0].timeframes.daily.current,
+        data[1].timeframes.daily.current,
+        data[2].timeframes.daily.current,
+        data[3].timeframes.daily.current,
+        data[4].timeframes.daily.current,
+        data[5].timeframes.daily.current,
+      ],
+      [
+        data[0].timeframes.daily.previous, 
+        data[1].timeframes.daily.previous, 
+        data[2].timeframes.daily.previous, 
+        data[3].timeframes.daily.previous, 
+        data[4].timeframes.daily.previous, 
+        data[5].timeframes.daily.previous
+      ]
     ];
     dailyDataForDashboard(dailyData);
   }
  
-
   function weeklyTimeframe() {
     const weeklyButton = document.getElementById('weekly');
     weeklyButton?.classList.add('active');
@@ -41,12 +49,22 @@ const User: React.FC<userProp> = ({data, dailyDataForDashboard, weeklyDataForDas
     const dailyButton = document.getElementById('daily')
     dailyButton?.classList.remove('active');
     const weeklyData = [
-      data[0].timeframes.weekly.current,
-      data[1].timeframes.weekly.current,
-      data[2].timeframes.weekly.current,
-      data[3].timeframes.weekly.current,
-      data[4].timeframes.weekly.current,
-      data[5].timeframes.weekly.current,
+      [
+        data[0].timeframes.weekly.current,
+        data[1].timeframes.weekly.current,
+        data[2].timeframes.weekly.current,
+        data[3].timeframes.weekly.current,
+        data[4].timeframes.weekly.current,
+        data[5].timeframes.weekly.current,
+      ],
+      [
+        data[0].timeframes.weekly.previous, 
+        data[1].timeframes.weekly.previous, 
+        data[2].timeframes.weekly.previous, 
+        data[3].timeframes.weekly.previous, 
+        data[4].timeframes.weekly.previous, 
+        data[5].timeframes.weekly.previous
+      ]
     ];
     weeklyDataForDashboard(weeklyData)
   }
@@ -59,18 +77,25 @@ const User: React.FC<userProp> = ({data, dailyDataForDashboard, weeklyDataForDas
     const weeklyButton = document.getElementById('weekly');
     weeklyButton?.classList.remove('active');
     const monthlyData = [
-      data[0].timeframes.monthly.current,
-      data[1].timeframes.monthly.current,
-      data[2].timeframes.monthly.current,
-      data[3].timeframes.monthly.current,
-      data[4].timeframes.monthly.current,
-      data[5].timeframes.monthly.current,
+      [
+        data[0].timeframes.monthly.current,
+        data[1].timeframes.monthly.current,
+        data[2].timeframes.monthly.current,
+        data[3].timeframes.monthly.current,
+        data[4].timeframes.monthly.current,
+        data[5].timeframes.monthly.current,
+      ],
+      [
+        data[0].timeframes.monthly.previous, 
+        data[1].timeframes.monthly.previous, 
+        data[2].timeframes.monthly.previous, 
+        data[3].timeframes.monthly.previous, 
+        data[4].timeframes.monthly.previous, 
+        data[5].timeframes.monthly.previous
+      ]
     ];
     monthlyDataFromDashboard(monthlyData)
   }
-
-
-   // const [active,setActive] = useState(dailyTimeframe)
 
   return (
     <div className='w-[90%]'>
