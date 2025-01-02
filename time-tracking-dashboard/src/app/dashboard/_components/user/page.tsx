@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import React from 'react'
 import Image from 'next/image'
 import UserImage from '../../../../../public/images/image-jeremy.png'
