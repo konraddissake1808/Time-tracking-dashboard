@@ -5,9 +5,9 @@ import UserImage from '../../../../../public/images/image-jeremy.png'
 
 type userProp = {
   workDailyData: number;
-  dailyDataForDashboard: any;
-  weeklyDataForDashboard: any;
-  monthlyDataFromDashboard: any;
+  dailyDataForDashboard: array;
+  weeklyDataForDashboard: array;
+  monthlyDataFromDashboard: array;
 };
 
 
