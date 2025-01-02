@@ -7,7 +7,19 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'xs': '320px',
+      'sm': '375px',
+      'md': '425px',
+      'lg': '768px',
+      'xl': '1024px',
+      '2xl': '1440px',
+      '3xl': '2560px',
+    },
     extend: {
+      fontFamily: {
+        rubik:['var(--font-rubik)'],
+      },
       colors: {
         //primary
         blue: "hsl(246, 80%, 60%)",
