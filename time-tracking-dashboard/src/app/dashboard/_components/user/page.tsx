@@ -4,11 +4,13 @@ import React from 'react'
 import Image from 'next/image'
 import UserImage from '../../../../../public/images/image-jeremy.png'
 
+
 type userProp = {
   workDailyData: number;
   dailyDataForDashboard: any;
   weeklyDataForDashboard: any;
   monthlyDataFromDashboard: any;
+  data: any;
 };
 
 
