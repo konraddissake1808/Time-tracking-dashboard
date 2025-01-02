@@ -34,17 +34,17 @@ function Dashboard({data}) {
     ]
   )
 
-  const dailyTimeframe = (dailyButtonData: array) => {
+  const dailyTimeframe = (dailyButtonData: Array<Array<number>>) => {
     setTime(dailyButtonData[0]);
     setPreviousTime(dailyButtonData[1])
   }
 
-  const weeklyTimeframe = (weeklyButtonData: array) => {
+  const weeklyTimeframe = (weeklyButtonData: Array<Array<number>>) => {
     setTime(weeklyButtonData[0]);
     setPreviousTime(weeklyButtonData[1])
   };
 
-  const monthlyTimeframe = (monthlyButtonData: array) => {
+  const monthlyTimeframe = (monthlyButtonData: Array<Array<number>>) => {
     setTime(monthlyButtonData[0]);
     setPreviousTime(monthlyButtonData[1])
   };

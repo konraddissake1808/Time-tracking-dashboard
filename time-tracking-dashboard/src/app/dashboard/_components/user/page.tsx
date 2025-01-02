@@ -6,7 +6,6 @@ import UserImage from '../../../../../public/images/image-jeremy.png'
 
 
 type userProp = {
-  workDailyData: number;
   dailyDataForDashboard: any;
   weeklyDataForDashboard: any;
   monthlyDataFromDashboard: any;
