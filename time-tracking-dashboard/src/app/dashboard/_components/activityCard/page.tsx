@@ -11,7 +11,8 @@ type ActivityProps = {
   previousTime: number;
 }
 
-export const Activity: React.FC<ActivityProps> = ({color,imageSrc, title, time, previousTime}) => {
+
+export const Activity: React.FC<ActivityProps> = ({title, color,imageSrc, time, previousTime}) => {
   return (
     <div id='activity-card' className='w-[90%] mb-6 sm:w-[320px] xl:h-full'>
       <div className='w-full h-32 relative xl:h-full'>
